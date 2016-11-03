@@ -1,5 +1,6 @@
 #picks and returns random elment of an "x" list
 #usage : pick_a_word(listname)
+
 def pick_a_word(x):
     import random
     the_word = (x[random.randrange(len(x))])
@@ -29,7 +30,6 @@ def loadInWords(FILE):
 # gets a word (x) counts the lenght of it and prints out the equal amounts of underscores and spaces between them
 # usage : printUnderScores(wordname)
 def printUnderScores(choosenWord, indexList, letters):
-   # letters = ["_ " for i in range(len(choosenWord))]
 
     if len(indexList) != 0:
        for i in indexList:
@@ -67,6 +67,24 @@ def checkTip(userInput, selectedWord):
        if selectedWord[i] == userInput:
            matchIndex.append(i)
    return matchIndex
+
+########################################################################################
+
+# checks if the given list have any underscores in it
+# if it has can be used to determine if the player guessed the word corectly
+def didTheUserWin(letterList):
+    scoreCount = len(letterList)
+    for i in letterList:
+        if i != "_ ":
+            scoreCount -= 1
+    if scoreCount == 0:
+        return True
+    return False
+    
+        
+                   
+        
+
 
 ########################################################################################
 

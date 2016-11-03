@@ -29,6 +29,10 @@ while True:
     else:
         correct += userIn + " "
 
+    if hangman_funcs.didTheUserWin(letters):
+        break
+    print(str(hangman_funcs.didTheUserWin(letters)))
+
 print(indexes)
 
 
