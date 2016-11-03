@@ -3,6 +3,5 @@ import hangman_funcs
 
 
 
-myList = loadInWords("teszt.txt")
-print(myList)
+print(hangman_funcs.pick_a_word(hangman_funcs.loadInWords("words.txt")))
 
