@@ -5,6 +5,8 @@ def pick_a_word(x):
     the_word = (x[random.randrange(len(x))])
     return the_word
 
+########################################################################################
+
 # reads in a file into an array and returns that array.
 # usage : my_List = loadInWords("Filename.txt")
 def loadInWords(FILE):
@@ -22,11 +24,16 @@ def loadInWords(FILE):
     myFile.close()
     return array
 
+########################################################################################
+
 # gets a word (x) counts the lenght of it and prints out the equal amounts of underscores and spaces between them
 # usage : printUnderScores(wordname)
 def printUnderScores(x):
     for i in range(len(x)):
         print("_ ", end="")
+
+
+########################################################################################
 
 # asks a user for an imput and checks if that input is valid(alphabets and 1 character long) or not, if not it prints 
 # that the caracters are not valid and asks the input again, if its valid it breaks out of the cycle
@@ -40,3 +47,18 @@ def getUserInput():
         else:
             print("You gave more than 1 character, or not a character.")
     return userInput
+
+########################################################################################
+
+# gets a character, and another word string as input,
+# then returns on wich index the character appearn in the given word, in a list,
+# returns -1 if the given char is not in the word
+def checkTip(userInput, selectedWord):
+   matchIndex = []
+   for i in range(len(selectedWord)):
+       if selectedWord[i] == userInput:
+           matchIndex.append(i)
+   return matchIndex
+
+########################################################################################
+
