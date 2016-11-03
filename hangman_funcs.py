@@ -22,7 +22,8 @@ def loadInWords(FILE):
     myFile.close()
     return array
 
-
+# gets a word (x) counts the lenght of it and prints out the equal amounts of underscores and spaces between them
+# usage : printUnderScores(wordname)
 def printUnderScores(x):
     for i in range(len(x)):
         print("_ ", end="")
