@@ -24,5 +24,5 @@ def loadInWords(FILE):
 
 
 def printUnderScores(x):
-    for i in range len(x):
+    for i in range(len(x)):
         print("_ ", end="")
