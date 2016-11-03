@@ -27,3 +27,16 @@ def loadInWords(FILE):
 def printUnderScores(x):
     for i in range(len(x)):
         print("_ ", end="")
+
+# asks a user for an imput and checks if that input is valid(alphabets and 1 character long) or not, if not it prints 
+# that the caracters are not valid and asks the input again, if its valid it breaks out of the cycle
+# usage : call the function where u need it 
+def getUserInput():
+    while True:
+        userInput = input("Enter a character: ")
+
+        if len(userInput) == 1 and userInput.isalpha:
+            break
+        else:
+            print("You gave more than 1 character, or not a character.")
+    return userInput
