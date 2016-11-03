@@ -48,7 +48,7 @@ def printUnderScores(choosenWord, indexList, letters):
 # usage : call the function where u need it 
 def getUserInput():
     while True:
-        userInput = input("Enter a character: ")
+        userInput = input("\nEnter a character: ")
 
         if len(userInput) == 1 and not userInput.isdigit():
             break
@@ -71,7 +71,7 @@ def checkTip(userInput, selectedWord):
 ########################################################################################
 
 # checks if the given list have any underscores in it
-# if it has can be used to determine if the player guessed the word corectly
+# if it has can be used to determine if the player guessed the word corectlys
 def didTheUserWin(letterList):
     scoreCount = len(letterList)
     for i in letterList:

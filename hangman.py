@@ -1,38 +1,63 @@
 #init
 import hangman_funcs
 
-wordList = hangman_funcs.loadInWords("words.txt")
-print("Welcome!\n")
-print("This is a hangman game, where you need to guess a word from letter to letter.\n")
+run = True
 
-choosenWord = hangman_funcs.pick_a_word(wordList)
-print(choosenWord)
+while run:
+    wordList = hangman_funcs.loadInWords("words.txt")
+    print("Welcome!\n")
 
-correct = ""
-incorrect = ""
+    choosenWord = hangman_funcs.pick_a_word(wordList)
+    #print(choosenWord)
 
-letters = [ "_ "] * len(choosenWord)
+    correct = ""
+    incorrect = ""
+    lives = 0
 
-while True:
+    letters = [ "_ "] * len(choosenWord)
 
-    print("\nCorrect: %s" % (correct))
-    print("\nInorrect: %s" % (incorrect))
+    print("\n#############################This is a hangman game, where you need to guess a word from letter to letter.#############################\n")
+    for i in letters:
+        print(i, end="")
 
-    userIn = hangman_funcs.getUserInput()
-    hangman_funcs.printUnderScores(choosenWord, hangman_funcs.checkTip(userIn, choosenWord), letters)
-    indexes = hangman_funcs.checkTip(userIn, choosenWord)
+    while True:
+        print("\n\nCorrect: %s" % (correct))
+        print("\nInorrect: %s" % (incorrect))
 
-    if len(indexes) == 0:
-        incorrect = incorrect + userIn + " "
-        print("Wrong tip!")
-        hangman_funcs.hangmanPicsList(0)
-    else:
-        correct += userIn + " "
+        userIn = hangman_funcs.getUserInput()
+        hangman_funcs.printUnderScores(choosenWord, hangman_funcs.checkTip(userIn, choosenWord), letters)
+        indexes = hangman_funcs.checkTip(userIn, choosenWord)
 
-    if hangman_funcs.didTheUserWin(letters):
-        break
-    print(str(hangman_funcs.didTheUserWin(letters)))
+        if len(indexes) == 0:
+            incorrect = incorrect + userIn + " "
+            print("\n\nWrong tip!")
+            hangman_funcs.hangmanPicsList(lives)
+            lives += 1
+        else:
+            correct += userIn + " "
 
-print(indexes)
+        if lives == 7:
+            print("\nYour word was : " + choosenWord + ".")
+            print("You failed miserably... Again...")
+
+            again = input("Do you want to try again ? (y/n): ")
+
+            if again == "y":
+                run = True
+            else:
+                run = False
+            break
+
+        if hangman_funcs.didTheUserWin(letters):
+            
+
+            again = input("\nCongratulations! Do you want another word?(y/n):")
+
+            if again == "y":
+                run = True
+            else:
+                run = False
+            break
+   
 
 

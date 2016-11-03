@@ -10,7 +10,7 @@ breeze
 brick
 calm
 canal
-Casey
+casey
 cast
 chose
 claws
@@ -20,7 +20,7 @@ contrast
 cookies
 customs
 damage
-Danny
+danny
 deeply
 depth
 discussion
@@ -47,7 +47,7 @@ happily
 harry
 heading
 hunter
-Illinois
+illinois
 image
 independent
 instant
