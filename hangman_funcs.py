@@ -42,7 +42,7 @@ def getUserInput():
     while True:
         userInput = input("Enter a character: ")
 
-        if len(userInput) == 1 and userInput.isalpha:
+        if len(userInput) == 1 and not userInput.isdigit():
             break
         else:
             print("You gave more than 1 character, or not a character.")
