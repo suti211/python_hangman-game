@@ -28,9 +28,17 @@ def loadInWords(FILE):
 
 # gets a word (x) counts the lenght of it and prints out the equal amounts of underscores and spaces between them
 # usage : printUnderScores(wordname)
-def printUnderScores(x):
-    for i in range(len(x)):
-        print("_ ", end="")
+def printUnderScores(choosenWord, indexList, letters):
+   # letters = ["_ " for i in range(len(choosenWord))]
+
+    if len(indexList) != 0:
+       for i in indexList:
+           letters[i] = choosenWord[i]
+
+    for i in range(len(choosenWord)):
+        print(str(letters[i]), end="")
+
+    
 
 
 ########################################################################################
@@ -62,6 +70,8 @@ def checkTip(userInput, selectedWord):
 
 ########################################################################################
 
+# stores the pictures for hangman
+# usage : hangmanPicsList(ahanyadik képet)
 def hangmanPicsList(x):
     hangmanlist = ['''
 
@@ -120,4 +130,4 @@ def hangmanPicsList(x):
    / \  |
         |
   =========''']
-  print(hangmanlist[x])
+    print(hangmanlist[x])
