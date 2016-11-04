@@ -50,6 +50,7 @@ def printUnderScores(choosenWord, indexList, letters):
 def getUserInput(correctString, incorrectString):
     while True:
         userInput = input("\nEnter a character: ")
+        userInput = userInput.lower()
         alreadyUsed = False
 
         for i in range(len(incorrectString)):
