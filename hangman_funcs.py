@@ -45,15 +45,27 @@ def printUnderScores(choosenWord, indexList, letters):
 
 # asks a user for an imput and checks if that input is valid(alphabets and 1 character long) or not, if not it prints 
 # that the caracters are not valid and asks the input again, if its valid it breaks out of the cycle
+# gets two strings, and checks if the input occurs anywhere in those stringsm so the input cannot be used again.
 # usage : call the function where u need it 
-def getUserInput():
+def getUserInput(correctString, incorrectString):
     while True:
         userInput = input("\nEnter a character: ")
+        alreadyUsed = False
 
-        if len(userInput) == 1 and not userInput.isdigit():
-            break
+        for i in range(len(incorrectString)):
+            if incorrectString[i] == userInput:
+                alreadyUsed = True
+        
+        for i in range(len(correctString)):
+            if correctString[i] == userInput:
+                alreadyUsed = True
+
+        if len(userInput) == 1 and not userInput.isdigit() and alreadyUsed != True:
+            break 
         else:
-            print("You gave more than 1 character, or not a character.")
+            print("You gave more than 1 character, or not a character.\nOr the character is already used!")
+        
+        
     return userInput
 
 ########################################################################################
