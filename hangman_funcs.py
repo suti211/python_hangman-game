@@ -1,3 +1,5 @@
+import string
+
 #picks and returns random elment of an "x" list
 #usage : pick_a_word(listname)
 
@@ -61,7 +63,9 @@ def getUserInput(correctString, incorrectString):
             if correctString[i] == userInput:
                 alreadyUsed = True
 
-        if len(userInput) == 1 and not userInput.isdigit() and alreadyUsed != True:
+        isAsciiLower = userInput in string.ascii_lowercase
+
+        if len(userInput) == 1 and not userInput.isdigit() and alreadyUsed != True and isAsciiLower:
             break 
         else:
             print("You gave more than 1 character, or not a character.\nOr the character is already used!")
