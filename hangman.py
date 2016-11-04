@@ -1,6 +1,8 @@
 #init
 import hangman_funcs
 
+import teszt
+
 # main control variable
 run = True
 
