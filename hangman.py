@@ -8,7 +8,7 @@ while run:
     print("Welcome!\n")
 
     choosenWord = hangman_funcs.pick_a_word(wordList)
-    #print(choosenWord)
+    print(choosenWord)
 
     correct = ""
     incorrect = ""
@@ -24,9 +24,9 @@ while run:
         print("\n\nCorrect: %s" % (correct))
         print("\nInorrect: %s" % (incorrect))
 
-        userIn = hangman_funcs.getUserInput()
-        hangman_funcs.printUnderScores(choosenWord, hangman_funcs.checkTip(userIn, choosenWord), letters)
+        userIn = hangman_funcs.getUserInput(correct, incorrect)
         indexes = hangman_funcs.checkTip(userIn, choosenWord)
+        hangman_funcs.printUnderScores(choosenWord, indexes, letters)
 
         if len(indexes) == 0:
             incorrect = incorrect + userIn + " "
