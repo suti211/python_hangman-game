@@ -8,7 +8,7 @@ while run:
     print("Welcome!\n")
 
     choosenWord = hangman_funcs.pick_a_word(wordList)
-    print(choosenWord)
+    #print(choosenWord)
 
     correct = ""
     incorrect = ""
