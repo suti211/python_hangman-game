@@ -1,6 +1,7 @@
 # init
 import hangman_funcs
 import os
+import time
 
 
 # import teszt
@@ -60,7 +61,7 @@ while run:
         # asks if the user wants to try again
         if lives == 7:
             print("\nYour word was : " + choosenWord + ".")
-            print("You failed miserably... Again...")
+            hangman_funcs.loseanimation()
 
             again = input("Do you want to try again ? (y/n): ")
 
@@ -73,6 +74,7 @@ while run:
         # handle what happens when the user wins
         # asks if the user want another word
         if hangman_funcs.didTheUserWin(letters):
+            hangman_funcs.winanimation()
             again = input("\nCongratulations! Do you want another word?(y/n):")
             if again == "y":
                 run = True
