@@ -1,5 +1,7 @@
 # init
 import hangman_funcs
+import os
+
 
 # import teszt
 
@@ -28,6 +30,7 @@ while run:
     # fill up al ist with "_" chars
     letters = ["_ "] * len(choosenWord)
 
+    os.system("clear")
     print("\n#############################This is a hangman game, where you need to guess a word from letter to letter.#############################\n")
     for i in letters:
         print(i, end="")
@@ -50,6 +53,8 @@ while run:
             lives += 1
         else:
             correct += userIn + " "
+            print("\n\nCorrect tip!")
+            hangman_funcs.hangmanPicsList(lives)
 
         # handle what happens when the user is out of lives
         # asks if the user wants to try again
