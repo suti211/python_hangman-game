@@ -1,7 +1,7 @@
-#init
+# init
 import hangman_funcs
 
-import teszt
+# import teszt
 
 # main control variable
 run = True
@@ -16,7 +16,7 @@ while run:
     choosenWord = hangman_funcs.pick_a_word(wordList)
 
     # for debug purposes only
-    #print(choosenWord)
+    # print(choosenWord)
 
     # strings to store the correct and incorrect character inputs
     correct = ""
@@ -26,7 +26,7 @@ while run:
     lives = 0
 
     # fill up al ist with "_" chars
-    letters = [ "_ "] * len(choosenWord)
+    letters = ["_ "] * len(choosenWord)
 
     print("\n#############################This is a hangman game, where you need to guess a word from letter to letter.#############################\n")
     for i in letters:
@@ -36,7 +36,8 @@ while run:
         print("\n\nCorrect: %s" % (correct))
         print("\nInorrect: %s" % (incorrect))
 
-        # gets user input, checks it, modifies the printline to the correct word.
+        # gets user input, checks it, modifies the printline to the correct
+        # word.
         userIn = hangman_funcs.getUserInput(correct, incorrect)
         indexes = hangman_funcs.checkTip(userIn, choosenWord)
         hangman_funcs.printUnderScores(choosenWord, indexes, letters)
@@ -49,7 +50,7 @@ while run:
             lives += 1
         else:
             correct += userIn + " "
-        
+
         # handle what happens when the user is out of lives
         # asks if the user wants to try again
         if lives == 7:
@@ -63,7 +64,7 @@ while run:
             else:
                 run = False
             break
-        
+
         # handle what happens when the user wins
         # asks if the user want another word
         if hangman_funcs.didTheUserWin(letters):
@@ -73,6 +74,3 @@ while run:
             else:
                 run = False
             break
-   
-
-
